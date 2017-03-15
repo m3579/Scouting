@@ -9,6 +9,6 @@ app.set("views", __dirname + path.sep + "views");
 
 app.use(express.static(__dirname));
 
-app.listen(9000, function() {
-	console.log("Listening on port 9000");
+app.listen(app.get("port"), function() {
+	console.log("Listening on port " + app.get("port"));
 });
