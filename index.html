@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Scouting</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+    
+    <script>
+      function toggleBaseline() {
+        if ($("#baseline").attr("value") == "Did not cross baseline") {
+          $("#baseline").attr("value", "Crossed baseline");
+        }
+        else {
+          $("#baseline").attr("value", "Did not cross baseline");
+        }
+       }
+      
+      function toggleAutonGears() {
+        if ($("#auton-gears").attr("value") == "Did not do gears in auton") {
+          $("#auton-gears").attr("value", "Did gears in auton");
+        }
+        else {
+          $("#auton-gears").attr("value", "Did not do gears in auton");
+        }
+      }
+      function toggleAutonHG() {
+        if ($("#auton-highgoal").attr("value") == "Did not do high goal in auton") {
+          $("#auton-highgoal").attr("value", "Did high goal in auton");
+        }
+        else {
+          $("#auton-highgoal").attr("value", "Did not do high goal in auton");
+        }
+      }
+      
+      function toggleAutonLG() {
+        if ($("#auton-lowgoal").attr("value") == "Did not do low goal in auton") {
+          $("#auton-lowgoal").attr("value", "Did low goal in auton");
+        }
+        else {
+          $("#auton-lowgoal").attr("value", "Did not do low goal in auton");
+        }
+        
+      }
+      
+      function incrementLG() {
+        $("#teleop-lg").attr("value", parseInt($("#teleop-lg").attr("value")) + 1);
+      }
+      
+      function decrementLG() {
+        $("#teleop-lg").attr("value", parseInt($("#teleop-lg").attr("value")) - 1);
+      }
+      
+      function incrementHG() {
+        $("#teleop-hg").attr("value", parseInt($("#teleop-hg").attr("value")) + 1);
+      }
+      
+      function decrementHG() {
+        $("#teleop-hg").attr("value", parseInt($("#teleop-hg").attr("value")) - 1);
+      }
+      
+      function incrementRotors() {
+        $("#teleop-rotors").attr("value", parseInt($("#teleop-rotors").attr("value")) + 1);
+      }
+      
+      function decrementRotors() {
+        $("#teleop-rotors").attr("value", parseInt($("#teleop-rotors").attr("value")) - 1);
+      }
+      
+      function toggleClimb() {
+       if ($("#teleop-climb").attr("value") == "Did not climb") {
+          $("#teleop-climb").attr("value", "Did climb");
+        }
+        else {
+          $("#teleop-climb").attr("value", "Did not climb");
+        }
+      }
+      
+      function toggleLostComms() {
+        if ($("#teleop-lostcomms").attr("value") == "Did not lose comms") {
+          $("#teleop-lostcomms").attr("value", "Lost comms");
+        }
+        else {
+          $("#teleop-lostcomms").attr("value", "Did not lose comms");
+        }
+      }
+      
+      function toggleRobotDamaged() {
+        if ($("#teleop-robotdamaged").attr("value") == "Robot was not damaged") {
+          $("#teleop-robotdamaged").attr("value", "Robot was damaged");
+        }
+        else {
+          $("#teleop-robotdamaged").attr("value", "Robot was not damaged");
+        }
+      }
+      
+         function togglePenalty() {
+        if ($("#teleop-penalty").attr("value") == "No penalties") {
+          $("#teleop-penalty").attr("value", "Had penalties");
+        }
+        else {
+          $("#teleop-penalty").attr("value", "No penalties");
+        }
+      }
+      
+       function toggleOffense() {
+        if ($("#teleop-offense").attr("value") == "Did not play offense") {
+          $("#teleop-offense").attr("value", "Played offense");
+        }
+        else {
+          $("#teleop-offense").attr("value", "Did not play offense");
+        }
+      }
+      
+         function toggleDefense() {
+        if ($("#teleop-defense").attr("value") == "Did not play defense") {
+          $("#teleop-defense").attr("value", "Played defense");
+        }
+        else {
+          $("#teleop-defense").attr("value", "Did not play defense");
+        }
+      }
+      
+               function toggleDisabled() {
+        if ($("#teleop-disabled").attr("value") == "Was not disabled") {
+          $("#teleop-disabled").attr("value", "Was disabled");
+        }
+        else {
+          $("#teleop-disabled").attr("value", "Was not disabled");
+        }
+      }
+      
+    </script>
+    
+  </head>
+  <body>
+      <form action="https://script.google.com/macros/s/AKfycby_6agGNhQy7DCnQcYndWGQKPEkkice3yra3_q4v6KcLkGJNxJB/exec"
+            method="POST">
+         Scouter name:<br>
+         <input type="text" name="scouter" /><br>
+        
+         Match #:<br>
+         <input type="number" name="match" /><br>
+        
+         Team #:<br>
+         <input type="number" name="team" /><br>
+       
+        Alliance Partner #1<br>
+        <input type="number" name="partner1" /><br>
+        
+        Alliance Partner #2<br>
+        <input type="number" name="partner2" /><br>
+        
+        Alliance color:<br>
+        <input type="radio" name="alliance" value="red" checked />Red<br>
+        <input type="radio" name="alliance" value="blue" />Blue<br>
+        <br>
+        <hr>
+       
+        <h1>
+          Auton
+        </h1>
+        <input type="button" value="Toggle baseline" onclick="javascript:toggleBaseline()" />
+        <input readonly name="baseline" type="text" id="baseline" value="Did not cross baseline"/><br>
+        <input type="button"  value="Toggle auton gears" onclick="javascript:toggleAutonGears()" />
+        <input readonly name="auton-gears" type="text" id="auton-gears" value="Did not do gears in auton"/><br>
+        <input type="button"  value="Toggle auton high goal" onclick="javascript:toggleAutonHG()" />
+        <input readonly name="auton-highgoal" type="text" id="auton-highgoal" value="Did not do high goal in auton"/><br>      
+        
+        <input type="button"  value="Toggle auton low goal" onclick="javascript:toggleAutonLG()" />
+        <input readonly name="auton-lowgoal" type="text" id="auton-lowgoal" value="Did not do low goal in auton"/><br>
+        <h1>
+          Teleop
+        </h1>
+        Low goal (# of trips):<br>
+        <input type="button" name="teleop-increment-lg" value="+ Low Goals" onclick="javascript:incrementLG()" />
+        <input type="button" name="teleop-decrement-lg" value="- Low Goals" onclick="javascript:decrementLG()" />
+        <input readonly name="teleop-lg" type="number" id="teleop-lg" value="0"/><br>
+        <br>
+        
+        High goal (# of trips):<br>
+        <input type="button" name="teleop-increment-hg" value="+ High Goals" onclick="javascript:incrementHG()" />
+        <input type="button" name="teleop-decrement-hg" value="- High Goals" onclick="javascript:decrementHG()" />
+        <input readonly name="teleop-hg" type="number" id="teleop-hg" value="0"/><br>
+        <br>
+        
+        Turning rotors:<br>
+        <input type="button" name="teleop-increment-rotors" value="+ Rotors" onclick="javascript:incrementRotors()" />
+        <input type="button" name="teleop-decrement-rotors" value="- Rotors" onclick="javascript:decrementRotors()" />
+        <input readonly name="teleop-rotors" type="number" id="teleop-rotors" value="0"/><br>
+        
+        <br>
+        
+        Did they climb?<br>
+        <input type="button" name="teleop-climb" value="Toggle teleop climb" onclick="javascript:toggleClimb()" />
+        <input readonly type="text" name="teleop-climb" id="teleop-climb" value="Did not climb"/><br>   
+        <br>
+        
+        Did they lose comms?<br>
+        <input type="button" name="teleop-lostcomms" value="Toggle lost comms" onclick="javascript:toggleLostComms()" />
+        <input readonly type="text" name="teleop-comms" id="teleop-lostcomms" value="Did not lose comms" /><br>   
+        <br>
+        
+        
+       Robot damaged?<br>
+        <input type="button" name="teleop-robotdamaged" value="Toggle robot damaged" onclick="javascript:toggleRobotDamaged()" />
+        <input readonly type="text" name="teleop-damaged" id="teleop-robotdamaged" value="Robot was not damaged"/><br>   
+        <br>
+        
+        
+         Incurred penalty<br>
+        <input type="button" name="teleop-penalty" value="Toggle penalty" onclick="javascript:togglePenalty()" />
+        <input readonly type="text" name="teleop-penalty" id="teleop-penalty" value="No penalties"/><br>   
+        <br>
+        
+         Played offense?<br>
+        <input type="button" name="teleop-offense" value="Toggle offense" onclick="javascript:toggleOffense()" />
+        <input readonly type="text" name="teleop-offense" id="teleop-offense" value="Did not play offense"/><br>   
+        <br>
+        
+        
+         Played defense?<br>
+        <input type="button" name="teleop-defense" value="Toggle defense" onclick="javascript:toggleDefense()" />
+        <input readonly type="text" name="teleop-defense" id="teleop-defense" value="Did not play defense"/><br>   
+        <br>
+        
+        
+         Robot disabled?<br>
+        <input type="button" name="teleop-disabled" value="Toggle disabled" onclick="javascript:toggleDisabled()" />
+        <input readonly type="text" name="teleop-disabled" id="teleop-disabled" value="Was not disabled"/><br>   
+        <br>
+        
+        Other:<br>
+        <input type="text" name="other" /><br>
+        <br>
+        
+        <input type="submit" />
+    </form>      
+  </body>
+</html>
